@@ -68,12 +68,13 @@ const UPDATEPROFILE = async (req, res) => {
         if (password) {
             password = await argon2.hash(password);
         }
-        let uddate = await User.updateOne({ _id: userid }, { $set: { fullName, password, avatar } })
+        let update = await User.updateOne({ _id: userid }, { $set: { fullName, password, avatar } })
         return res.status(201).send(update)
     } catch (error) {
         return res.status(500).send(error.message)
     }
 }
+
 
 
 

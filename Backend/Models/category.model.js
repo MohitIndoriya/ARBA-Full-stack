@@ -12,7 +12,7 @@ let categoryschema = mongoose.Schema({
     image: {
         type: String, required: true
     },
-    owner: { type: mongoose.Types.ObjectId, ref: "user" },
+    owner: { type: mongoose.Types.ObjectId, ref: "User" },
 
 });
 let Category = mongoose.model("category", categoryschema);
