@@ -1,0 +1,23 @@
+.mainbox{
+    display:flex;
+    flex-direction: row;
+   
+}
+.firstbox{
+    position: relative;
+}
+.firstbox>img{
+    width:300px;
+    height:200px;
+    
+}
+.secondbox{
+   
+    position:absolute;
+    margin-top: 150px;
+    margin-left: 18px;
+
+    background:white;
+    width:260px;
+    height:200px
+}

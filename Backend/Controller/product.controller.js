@@ -60,5 +60,15 @@ const GETPRODUCTS = async (req, res) => {
     }
 }
 
-
-module.exports = { CREATEPRODUCT, UPDATEPRODUCT, GETSINGLEPRODUCT, GETPRODUCTS }
+const MYPRODUCTS = async (req, res) => {
+    console.log(req.params);
+    let id = req.params.id
+    try {
+        console.log(req.user)
+        const products = await ProductModel.findOne({ owner: id })
+        return res.status(200).send(products)
+    } catch (error) {
+        return res.status(500).send(error.message)
+    }
+}
+module.exports = { CREATEPRODUCT, UPDATEPRODUCT, GETSINGLEPRODUCT, GETPRODUCTS, MYPRODUCTS }

@@ -1,0 +1,121 @@
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: #eee;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.rightItems {
+    display: flex;
+    align-items: center;
+}
+
+.cart {
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+}
+
+.cart img {
+    width: 24px;
+    height: 24px;
+}
+
+.cartCounter {
+    background-color: #ff0000;
+    color: #fff;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 2px 6px;
+    border-radius: 10px;
+    margin-left: 5px;
+}
+
+.profile {
+    position: relative;
+    margin-right:20px
+}
+
+.profile img {
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+}
+
+.profileMenu {
+    display: none;
+    position: absolute;
+    top: 30px;
+    right: 0;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 10px;
+    z-index: 1;
+}
+
+.profile:hover .profileMenu {
+    display: block;
+}
+
+.profileMenu ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.profileMenu ul li {
+    padding: 5px;
+    cursor: pointer;
+}
+
+.profileMenu ul li:hover {
+    background-color: #f5f5f5;
+}
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 24px;
+    height: 18px;
+    cursor: pointer;
+}
+
+.hamburger div {
+    width: 100%;
+    height: 2px;
+    background-color: #333;
+}
+
+@media (max-width: 768px) {
+    .rightItems {
+        flex-wrap: wrap;
+        align-items: center;
+    }
+
+    .cart {
+        order: 2;
+        margin: 10px 0;
+    }
+
+    .profile {
+        order: 3;
+        margin: 10px 0;
+    }
+
+    .hamburger {
+        order: 4;
+        display: flex;
+    }
+
+    .profileMenu {
+        top: 50px;
+    }
+}

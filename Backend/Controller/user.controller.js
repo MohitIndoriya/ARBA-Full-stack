@@ -5,6 +5,7 @@ const argon2 = require("argon2")
 
 const SIGNUP = async (req, res) => {
     const { userName, email, password, fullName } = req.body;
+    console.log(req.body)
     try {
         let user = await User.findOne({ email });
         if (user) {

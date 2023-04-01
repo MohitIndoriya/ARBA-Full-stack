@@ -5,7 +5,7 @@ const CREATECATEGORY = async (req, res) => {
     try {
 
         let { id } = req.user
-        console.log(req.user)
+        console.log(req.user.id)
         let category = await Category.create({ name, slug, image, owner: id })
         res.status(201).send({ id: category._id })
     } catch (error) {
