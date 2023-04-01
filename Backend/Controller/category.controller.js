@@ -7,7 +7,7 @@ const CREATECATEGORY = async (req, res) => {
         let { id } = req.user
         console.log(req.user.id)
         let category = await Category.create({ name, slug, image, owner: id })
-        res.status(201).send({ id: category._id })
+        res.status(201).send(category)
     } catch (error) {
         res.status(400).send(error)
     }
@@ -46,9 +46,19 @@ let GETCATEGORYBYID = async (req, res) => {
     }
 }
 
+const DELETECATEGORY = async (req, res) => {
+    try {
+        await Category.findByIdAndDelete({ _id: req.params.id })
+        res.status(201).send("category deleted")
+    } catch (error) {
+        res.status(400).send(error)
+    }
+}
+
 module.exports = {
     CREATECATEGORY,
     UPDATECATEGORY,
     GETALLCATEGORY,
-    GETCATEGORYBYID
+    GETCATEGORYBYID,
+    DELETECATEGORY
 }

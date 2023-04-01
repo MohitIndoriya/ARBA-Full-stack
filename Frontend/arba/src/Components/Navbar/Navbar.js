@@ -1,6 +1,8 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import styles from './Navbar.module.css';
 const Navbar = () => {
+    let navigate = useNavigate()
     return (
         <nav className={styles.navbar}>
             <div className={styles.logo}>Logo</div>
@@ -13,7 +15,7 @@ const Navbar = () => {
                     <img src="https://png.pngtree.com/png-vector/20190710/ourmid/pngtree-user-vector-avatar-png-image_1541962.jpg" alt="Profile" />
                     <div className={styles.profileMenu}>
                         <ul>
-                            <li>My store</li>
+                            <li onClick={() => navigate("/mystore")}>My store</li>
                             <li>Profile</li>
                             <li>Logout</li>
                         </ul>

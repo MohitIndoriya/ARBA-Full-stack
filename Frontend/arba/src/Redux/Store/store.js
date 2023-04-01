@@ -7,12 +7,16 @@ import {
 } from 'redux';
 import authReducer from '../Reducers/auth.reducer';
 import productReducer from '../Reducers/product.reducer';
+import CategoryReducer from '../Reducers/category.reducer';
+import cartReducer from '../Reducers/cart.reducer';
 
 
 
 let root = combineReducers({
     auth: authReducer,
-    product: productReducer
+    product: productReducer,
+    category: CategoryReducer,
+    cart: cartReducer
 })
 
 

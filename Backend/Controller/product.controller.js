@@ -17,7 +17,8 @@ const UPDATEPRODUCT = async (req, res) => {
     try {
         const { productid } = req.params
         //delete image yet to be done
-        const update = await ProductModel.updateOne({ _id: productid }, { $set: { ...req.body } })
+        const { title, price, category, description, image } = req.body
+        const update = await ProductModel.updateOne({ _id: productid }, { $set: { title, price, category, description, image } })
         return res.status(200).send(update)
     } catch (error) {
         return res.status(500).send(error.message)
@@ -69,4 +70,13 @@ const MYPRODUCTS = async (req, res) => {
         return res.status(500).send(error.message)
     }
 }
-module.exports = { CREATEPRODUCT, UPDATEPRODUCT, GETSINGLEPRODUCT, GETPRODUCTS, MYPRODUCTS }
+
+const DELETEPRODUCT = async (req, res) => {
+    try {
+        await ProductModel.findByIdAndDelete({ _id: req.params.id })
+        return res.status(201).send("product deleted")
+    } catch (error) {
+        return res.status(500).send(error.message)
+    }
+}
+module.exports = { CREATEPRODUCT, UPDATEPRODUCT, GETSINGLEPRODUCT, GETPRODUCTS, MYPRODUCTS, DELETEPRODUCT }

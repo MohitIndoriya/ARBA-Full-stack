@@ -1,8 +1,8 @@
-import { ADDNEWPRODUCT, DELETEPRODUCT, EDITPRODUCT, GETALLPRODUCTS } from "../ActionTypes/product.actiontype"
+import { ADDNEWPRODUCT, DELETEPRODUCT, EDITPRODUCT, GETALLPRODUCTS } from "../ActionTypes/category.actiontype"
 
-export const getMyProducts = () => async (dispatch) => {
+export const getCategory = () => async (dispatch) => {
     try {
-        let res = await fetch("http://localhost:8080/product/myproduct", {
+        let res = await fetch("http://localhost:8080/category/", {
             headers: {
                 'Content-Type': 'application/json',
                 "Authorization": "" + JSON.parse(localStorage.getItem("auth")).token
@@ -13,9 +13,9 @@ export const getMyProducts = () => async (dispatch) => {
         console.log(error, "arr")
     }
 }
-export const addNewProduct = (data) => async (dispatch) => {
+export const addNewCategory = (data) => async (dispatch) => {
     try {
-        let res = await fetch(`http://localhost:8080/product/addproduct/${data.category}`, {
+        let res = await fetch(`http://localhost:8080/category/create`, {
             method: "POST",
             body: JSON.stringify(data),
             headers: {
@@ -29,9 +29,9 @@ export const addNewProduct = (data) => async (dispatch) => {
     }
 }
 
-export const updateProduct = (data) => async (dispatch) => {
+export const updateCategory = (data) => async (dispatch) => {
     try {
-        let res = await fetch(`http://localhost:8080/product/update/${data._id}`, {
+        let res = await fetch(`http://localhost:8080/category/update/${data._id}`, {
             method: "PUT",
             body: JSON.stringify(data),
             headers: {
@@ -45,9 +45,9 @@ export const updateProduct = (data) => async (dispatch) => {
     }
 }
 
-export const deleteProduct = (id) => async (dispatch) => {
+export const deleteCategory = (id) => async (dispatch) => {
     try {
-        let res = await fetch(`http://localhost:8080/product/${id}`, {
+        let res = await fetch(`http://localhost:8080/category/${id}`, {
             method: "DELETE",
             headers: {
                 'Content-Type': 'application/json',

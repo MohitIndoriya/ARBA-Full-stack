@@ -21,3 +21,8 @@
     width:260px;
     height:200px
 }
+.secondbox>button{
+    background-color: antiquewhite;
+    width:150px;
+    font-size: larger;
+}

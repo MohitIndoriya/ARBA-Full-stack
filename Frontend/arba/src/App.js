@@ -7,28 +7,43 @@ import Carousel from './Components/Carousal/Carousal';
 import Navbar from './Components/Navbar/Navbar.js';
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
-import { addNewProduct, getMyProducts, updateProduct } from './Redux/Actions/product.action';
+import { addNewProduct, deleteProduct, getMyProducts, updateProduct } from './Redux/Actions/product.action';
 import Singleproduct from './Components/SingleProduct/Singleproduct';
 import Dialog from './Components/CreateProductDailog/CreateProductDailog';
+import { addNewCategory, deleteCategory, getCategory, updateCategory } from './Redux/Actions/category.action';
+import { Route, Routes } from 'react-router-dom';
+import Home from './Components/Home/Home';
+import Cart from './Components/Cart/Cart';
+import Mystore from './Components/MyStore/Mystore';
+import Products from './Components/Products/Products';
+import Allproducts from './Components/AllProducts/Allproducts';
 const images = [
   "https://picsum.photos/800/400?random=1", "https://picsum.photos/800/400?random=2", "https://picsum.photos/800/400?random=3", "https://picsum.photos/800/400?random=4", "https://picsum.photos/800/400?random=5"]
 function App() {
-  let p = useSelector(s => s.product)
+  let p = useSelector(s => s.category)
   const dispatch = useDispatch()
   useEffect(() => {
-    dispatch(updateProduct({ title: "test product 2", price: 213, _id: "6425cd7d13caa2040db45040", image: "dummy.url", description: "test discription" }))
+    dispatch(getCategory())
+    dispatch(deleteCategory("6427c5d60a2e1d4f20def1b6"))
   }, [])
   console.log(p)
   return (
     <div className="App">
       <Navbar />
-      <Signup />
-      <Login />
+
+      <Routes>
+        <Route path='/signup' element={<Signup />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/" element={<Home />} />
+        <Route path="/category" element={<Cart />} />
+        <Route path="/mystore" element={<Mystore />} />
+        <Route path="/Allproducts" element={<Allproducts />} />
+
+      </Routes>
 
 
-      <Carousel images={images} />
-      <Singleproduct />
-      <Dialog />
+
+
     </div>
   );
 }
