@@ -36,6 +36,7 @@ const ADDTOCART = async (req, res) => {
 
 const UPDATECART = async (req, res) => {
     const id = req.user.id;
+    console.log(req.body, "itsme")
     try {
         const cart = await Cart.findOneAndUpdate({ userId: id, _id: req.params.id }, req.body, { new: true }).populate('productId');
         res.status(200).send({ data: cart });

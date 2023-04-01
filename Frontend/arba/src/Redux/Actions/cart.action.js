@@ -31,12 +31,14 @@ export const addProductToCart = (id) => async (dispatch) => {
                 "Authorization": "" + JSON.parse(localStorage.getItem("auth")).token
             }
         }).then((res) => res.json())
+        console.log(res)
         let ress = await fetch(`http://localhost:8080/cart`, {
             headers: {
                 'Content-Type': 'application/json',
                 "Authorization": "" + JSON.parse(localStorage.getItem("auth")).token
             }
         }).then((res) => res.json())
+
         dispatch({ type: GET_CART_SUCCESS, payload: ress.data });
         return dispatch({
             type: ADD_TO_CART_SUCCESS,
@@ -57,15 +59,17 @@ export const addProductToCart = (id) => async (dispatch) => {
 export const updateProductInCart = (id, quantity) => async (dispatch) => {
 
     try {
+        console.log(id, quantity)
         dispatch({ type: UPDATE_CART_REQUEST });
         let res = await fetch(`http://localhost:8080/cart/${id}`, {
             method: "PUT",
-            body: JSON.stringify(quantity),
+            body: JSON.stringify({ quantity: quantity }),
             headers: {
                 'Content-Type': 'application/json',
                 "Authorization": "" + JSON.parse(localStorage.getItem("auth")).token
             }
         }).then((res) => res.json())
+
         dispatch({
             type: UPDATE_CART_SUCCESS,
 

@@ -12,7 +12,7 @@ export default function Allproducts() {
         dispatch(getMyProducts())
     }, [])
     return (
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(4,1fr)", marginTop: "20px" }}>
+        <div style={{ height: "700px", display: "grid", gridTemplateColumns: "repeat(4,1fr)", marginTop: "20px" }}>
             {products?.map((e) =>
                 <Singleproduct {...e} />
             )

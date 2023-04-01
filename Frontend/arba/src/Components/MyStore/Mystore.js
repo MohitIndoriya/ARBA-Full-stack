@@ -18,7 +18,7 @@ export default function Mystore() {
         <div>
 
             <div>
-                <button onClick={() => setcat(true)}>Category</button>
+                <button style={{ width: "200px" }} onClick={() => setcat(true)}>Category</button>
                 <button onClick={() => setcat(false)}>Products</button>
             </div>
 

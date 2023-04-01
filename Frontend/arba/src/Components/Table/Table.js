@@ -21,7 +21,7 @@ export default function Table({ arr }) {
 
                 </thead>
                 <tbody>
-                    {arr.map((e) => {
+                    {arr?.map((e) => {
 
                         return (<tr className={styles.actirow}>   <td >{e.image}</td>
                             <td>{e.name}</td>

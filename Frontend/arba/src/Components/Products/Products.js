@@ -15,7 +15,7 @@ export default function Products() {
     }, [])
     return (
         <>
-            <div style={{ display: "grid", gridTemplateColumns: "repeat(4,1fr)", marginTop: "20px" }}>
+            <div style={{ display: "grid", gridTemplateColumns: "repeat(5,1fr)", marginTop: "20px", marginBottom: "90px" }}>
                 {products?.map((e) =>
                     <Singleproduct {...e} />
                 )

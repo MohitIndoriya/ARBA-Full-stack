@@ -48,7 +48,6 @@ export const authLogin = (data) => async (dispatch) => {
         let logindata = await res.json()
         console.log(logindata)
         alert("Login Succesfull")
-        data.navigate("/")
         return dispatch({ type: AUTH_LOGIN_SUCCESS, payload: { ...logindata } });
     } catch (error) {
         alert("invalid credentials")
@@ -57,5 +56,6 @@ export const authLogin = (data) => async (dispatch) => {
 }
 
 export const authLogout = () => (dispatch) => {
+    console.log("yes")
     return dispatch({ type: AUTH_LOGOUT });
 }
