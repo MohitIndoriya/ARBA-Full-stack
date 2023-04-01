@@ -20,19 +20,19 @@ function Dialog() {
                     <div className={styles.dialogContent}>
                         <h2>Create Product</h2>
                         <form>
-                            <label htmlFor="productName">Product Name:</label>
-                            <input type="text" id="productName" name="productName" />
+                            <div className={styles.formdata}> <label htmlFor="productName">Product Name:</label>
+                                <input type="text" id="productName" name="productName" /></div>
                             <br />
-                            <label>Price:</label>
-                            <input name="price" type="text" />
+                            <div className={styles.formdata}>  <label>Price:</label>
+                                <input name="price" type="text" /></div>
                             <br />
-                            <label>Image:</label>
-                            <input type="file" /><br />
-                            <label htmlFor="productDescription">Product Description:</label>
-                            <textarea
-                                id="productDescription"
-                                name="productDescription"
-                            ></textarea>
+                            <div className={styles.formdata}>  <label>Image:</label>
+                                <input type="file" /><br /></div>
+                            <div className={styles.formdata}>  <label htmlFor="productDescription">Product Description:</label>
+                                <textarea
+                                    id="productDescription"
+                                    name="productDescription"
+                                ></textarea></div>
                             <br />
                             <button type="submit">Create Product</button>
                         </form>

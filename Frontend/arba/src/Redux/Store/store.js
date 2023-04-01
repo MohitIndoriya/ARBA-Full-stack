@@ -6,12 +6,13 @@ import {
     combineReducers
 } from 'redux';
 import authReducer from '../Reducers/auth.reducer';
+import productReducer from '../Reducers/product.reducer';
 
 
 
 let root = combineReducers({
-    auth: authReducer
-
+    auth: authReducer,
+    product: productReducer
 })
 
 

@@ -10,27 +10,39 @@
     padding: 20px;
     z-index: 100;
 }
-
+.formdata{
+    display: flex;
+   
+    flex-direction: column;
+    justify-content: start;
+    
+}
 .dialogContent {
     display: flex;
     flex-direction: column;
+   
+   
 }
 
 .dialogContent h2 {
-    font-size: 1.2rem;
+    font-size: 3.3rem;
     margin-bottom: 10px;
 }
 
 .dialogContent label {
+    font-size: 1.3rem;
     font-weight: bold;
-    margin-bottom: 5px;
+  
+     text-align: start;
+
 }
 
 .dialogContent input,
 .dialogContent textarea {
     border: 1px solid #ccc;
     padding: 5px;
-    margin-bottom: 10px;
+
+    
 }
 
 .dialogContent button[type="submit"] {

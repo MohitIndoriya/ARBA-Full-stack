@@ -16,7 +16,7 @@ export default function productReducer(state = init, { type, payload }) {
                 ...state, data: [...edited]
             }
         case ADDNEWPRODUCT: return {
-            ...state, data: [payload, ...data]
+            ...state, data: [payload, ...state.data]
         }
         case DELETEPRODUCT:
             let deleted = state.data.filter((e) => e._id != payload._id)
